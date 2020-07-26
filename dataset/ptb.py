@@ -87,7 +87,8 @@ def load_data(data_type="train"):
     _download(file_name)
 
     words = open(file_path).read().replace("\n", "<eos>").strip().split()
-    corpus = np.array([word_to_id[w] for w in words])
+
+    corpus = np.array([word_to_id[w] for w in words if w in word_to_id.keys()])
 
     np.save(save_path, corpus)
     return corpus, word_to_id, id_to_word
