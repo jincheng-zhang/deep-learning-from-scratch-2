@@ -39,3 +39,4 @@ class BaseModel:
 
         for i, param in enumerate(self.params):
             param[...] = params[i]
+
